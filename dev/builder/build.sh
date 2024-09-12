@@ -11,6 +11,7 @@ printf "\n"
 
 CKBUILDER_VERSION="2.4.3"
 CKBUILDER_URL="https://download.cksource.com/CKBuilder/$CKBUILDER_VERSION/ckbuilder.jar"
+JVM_ARGS="--add-exports java.desktop/sun.java2d=ALL-UNNAMED"
 
 RED='\033[01;31m'
 GREEN='\033[01;32m'
@@ -85,7 +86,7 @@ then
 fi
 
 {
-	java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ release $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
+	java $JVM_ARGS -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ release $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
 } || {
 	if ! [[ $jdk_version =~ $regex ]] || [ $jdk_version -gt 15 ]; then
 		printf "\n${RED}The build has been stopped. Please verify the eventual error messages above.${RESET_STYLE}\n"

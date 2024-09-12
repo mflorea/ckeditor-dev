@@ -25,6 +25,10 @@
 		"shelljs": "^0.8.5",
 		"uglify-js": "^3.17.4"
 	},
+	"overrides": {
+		"winston": "^1.1.2",
+		"graceful-fs": "^4.2.11"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

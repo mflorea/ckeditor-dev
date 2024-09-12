@@ -50,7 +50,7 @@
 				return true;
 			}
 
-			return trim( selected.getFirst().getText() ) !== trim( startCell.getText() );
+			return trim( selected.$.textContent ) !== trim( startCell.getText() );
 		}
 
 		// Edge case: partially selected text node inside one table cell or cursor inside cell.
